@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'late.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nexa123.settings')
 
 application = get_wsgi_application()

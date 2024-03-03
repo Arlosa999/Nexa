@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'late.urls'
+ROOT_URLCONF = 'nexa123.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'late.wsgi.application'
+WSGI_APPLICATION = 'nexa123.wsgi.application'
 
 
 # Database
