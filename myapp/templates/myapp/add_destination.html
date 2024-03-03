@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Destination</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-components-web@latest/dist/material-components-web.min.css">
+</head>
+<body>
+    {% include 'myapp/navbar.html' %}
+    <h1>Add New Destination</h1>
+    <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+                <form action="{% url 'add_destination' %}" method="post">
+                    {% csrf_token %}
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input type="text" id="name" name="name" class="mdc-text-field__input" required>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="name" class="mdc-floating-label">Name</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input type="text" id="street" name="street" class="mdc-text-field__input" required>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="city" class="mdc-floating-label">Street</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input type="text" id="city" name="city" class="mdc-text-field__input" required>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="city" class="mdc-floating-label">City</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input type="text" id="zipcode" name="zipcode" class="mdc-text-field__input" required>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="zipcode" class="mdc-floating-label">Zipcode</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input type="text" id="region" name="region" class="mdc-text-field__input" required>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="region" class="mdc-floating-label">Region</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="mdc-text-field mdc-text-field--outlined">
+                        <input type="text" id="country" name="country" class="mdc-text-field__input" required>
+                        <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label for="country" class="mdc-floating-label">country</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                    </div>
+                    <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+                        <button class="mdc-button mdc-button--raised" type="submit">
+                            <span class="mdc-button__label">Add Destination</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'myapp/footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>mdc.autoInit()</script>
+</body>
+</html>

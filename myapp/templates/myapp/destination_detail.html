@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ destination.name }}</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    {% include 'myapp/navbar.html' %}
+    <div class="container">
+        <h2 class="header">{{ destination.name }}</h2>
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <p><strong>Street:</strong> {{ destination.street }}</p>
+                        <p><strong>City:</strong> {{ destination.city }}</p>
+                        <p><strong>Zipcode:</strong> {{ destination.zipcode }}</p>
+                        <p><strong>Region:</strong> {{ destination.region }}</p>
+                        <p><strong>Country:</strong> {{ destination.country }}</p>
+                        <p><strong>Creation Date:</strong> {{ destination.creation_date }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{% url 'create_appointment' destination_id=destination.id %}">Create New Appointment</a>
+                        <a href="{% url 'edit_destination' destination.id %}">Edit Destination</a>
+                        <a href="{% url 'homepage' %}">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'myapp/footer.html' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+    {% include 'myapp/navbar.html' %}
+    <div class="hero-section">
+        <div class="container">
+            <h1>Welcome to Nexa</h1>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container" style="margin-bottom: 100px; margin-top: 100px">
+        <h1>Destinations</h1>
+        <div class="row">
+            {% for destination in destinations %}
+            <div class="col s12 m6 l4">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{ destination.name }}</span>
+                        <p>{{ destination.street }}, {{ destination.city }}, {{ destination.zipcode }}</p>
+                        <p>{{ destination.region }}, {{ destination.country }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="{% url 'destination_detail' id=destination.id %}">Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% include 'myapp/footer.html' %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
